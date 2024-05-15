@@ -40,7 +40,7 @@ def mongo_get_admin_api_token():
     uri = 'https://services.cloud.mongodb.com/api/admin/v3.0/auth/providers/mongodb-cloud/login'
     data = json.dumps( {"username": api_key_public, "apiKey": api_key_private})
     header = {
-         'Content-Type': 'application/json'
+         'Content-Type': 'application/json',
          'Accept': 'application/json'
     }
     return requests.post(uri,data)
