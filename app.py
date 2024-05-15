@@ -117,13 +117,13 @@ def mongo_connect():
     read_app_config()
     
     usr = app_config['mongo']['user_name']
-    pas = app_config['mongo']['user_name']
+    pas = app_config['mongo']['password']
     app_id = app_config['mongo']['application_id']
     cluster = app_config['mongo']['cluster']
 
     # Create a new client and connect to the server
     global mongo_client
-    uri = f"mongodb+srv://{usr}:{"asdfasdf"}@{cluster}.d2woiba.mongodb.net/?retryWrites=true&w=majority&appName=cluster"
+    uri = f"mongodb+srv://{usr}:{pas}@{cluster}.d2woiba.mongodb.net/?retryWrites=true&w=majority&appName=cluster"
 
     mongo_client = MongoClient(uri, server_api = ServerApi('1'), tlsCAFile=certifi.where())
     try:
